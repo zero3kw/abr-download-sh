@@ -18,6 +18,11 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      - name: Install required packages
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y libxml2-utils
+
       - name: Run S3 list script
         run: |
           ./list_s3_objects.sh https://gov-csv-export-public.s3.ap-northeast-1.amazonaws.com "" gov-csv-export-public
