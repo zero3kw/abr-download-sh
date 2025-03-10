@@ -1,0 +1,2 @@
+Key,LastModified,ETag,Size
+https://gov-csv-export-public.s3.ap-northeast-1.amazonaws.com/mt_city/mt_city_all.csv.zip,2024-03-12T07:52:31.000Z,b257bdcff5c5910852a285519d81af01,49179

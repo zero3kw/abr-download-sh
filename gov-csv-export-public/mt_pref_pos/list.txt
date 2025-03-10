@@ -1,0 +1,2 @@
+Key,LastModified,ETag,Size
+https://gov-csv-export-public.s3.ap-northeast-1.amazonaws.com/mt_pref_pos/mt_pref_pos_all.csv.zip,2024-03-12T07:09:34.000Z,d44236d96323543fc1e8f8274d047322,881
