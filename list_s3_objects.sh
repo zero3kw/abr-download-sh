@@ -71,15 +71,26 @@ function list_items_in_bucket() {
     # ファイル情報を抽出してCSVに追加
     if [[ -n "$contents" ]]; then
       echo "$contents" | while read -r content; do
-        local key=$(echo "$content" | xmllint --nowarning --xpath "//*[local-name()='Key']/text()" - 2>/dev/null)
-        local last_modified=$(echo "$content" | xmllint --nowarning --xpath "//*[local-name()='LastModified']/text()" - 2>/dev/null)
-        local etag=$(echo "$content" | xmllint --nowarning --xpath "//*[local-name()='ETag']/text()" - 2>/dev/null)
-        local size=$(echo "$content" | xmllint --nowarning --xpath "//*[local-name()='Size']/text()" - 2>/dev/null)
+        # XMLから<Key>、<LastModified>、<ETag>、<Size>の値を一度に取得
+        # concatでパイプ区切りの1行の文字列として結合
+        local parsed_data=$(echo "$content" | xmllint --nowarning --xpath "concat(
+          //*[local-name()='Key']/text(), '|',
+          //*[local-name()='LastModified']/text(), '|',
+          //*[local-name()='ETag']/text(), '|',
+          //*[local-name()='Size']/text()
+        )" - 2>/dev/null)
+
+        # パイプ区切りの文字列を各変数に分割
+        # key: オブジェクトのパス
+        # last_modified: 最終更新日時（ISO 8601形式）
+        # etag: オブジェクトのハッシュ値
+        # size: ファイルサイズ（バイト）
+        IFS='|' read -r key last_modified etag size <<< "$parsed_data"
 
         if [[ -n "$key" && ! "$key" =~ /$ ]]; then
-          # フルパスを作成
+          # S3のフルURLを構築（バケットURL + オブジェクトキー）
           local full_key="${bucket_url}/${key}"
-          # ETagからダブルクォートを除去
+          # ETagからダブルクォートを除去（S3の応答形式に合わせる）
           etag=$(echo "$etag" | sed 's/^"//;s/"$//')
           echo "${full_key},${last_modified},${etag},${size}" >> "$tmp_list"
         fi
