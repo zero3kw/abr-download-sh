@@ -3,11 +3,15 @@
 
 ## 全国一括ダウンロード
 
-```bash
-# 地番データを全国分ダウンロード
-curl -s "https://raw.githubusercontent.com/zero3kw/abr-download-sh/refs/heads/main/gov-csv-export-public/mt_parcel/city/list.txt" | awk -F "," 'NR > 1 {print $1}' | xargs -P 0 -n 1 curl -s -O
+### 地番データ（mt_parcel）
 
-# 地番位置参照データを全国分ダウンロード
+```bash
+curl -s "https://raw.githubusercontent.com/zero3kw/abr-download-sh/refs/heads/main/gov-csv-export-public/mt_parcel/city/list.txt" | awk -F "," 'NR > 1 {print $1}' | xargs -P 0 -n 1 curl -s -O
+```
+
+### 地番位置参照データ（mt_parcel_pos）
+
+```bash
 curl -s "https://raw.githubusercontent.com/zero3kw/abr-download-sh/refs/heads/main/gov-csv-export-public/mt_parcel_pos/city/list.txt" | awk -F "," 'NR > 1 {print $1}' | xargs -P 0 -n 1 curl -s -O
 ```
 
@@ -35,7 +39,7 @@ curl -s "https://raw.githubusercontent.com/zero3kw/abr-download-sh/refs/heads/ma
 curl -s "https://raw.githubusercontent.com/zero3kw/abr-download-sh/refs/heads/main/gov-csv-export-public/mt_parcel_pos/city/list.txt" | awk -F "," 'NR > 1 && $1 ~ /mt_parcel_pos_city13/ {print $1}' | xargs -P 0 -n 1 curl -s -O
 ```
 
-## 都道府県コード一覧 (Prefecture Codes)
+## 都道府県コード一覧
 
 | コード | 都道府県 |
 |--------|----------|
