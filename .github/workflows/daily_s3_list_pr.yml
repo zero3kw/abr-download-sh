@@ -1,8 +1,8 @@
-name: Daily S3 Object List
+name: Daily S3 Object List PR
 
 on:
   schedule:
-    - cron: '0 4 * * *'
+    - cron: '0 5 * * *'
   workflow_dispatch:
 
 jobs:
@@ -11,6 +11,7 @@ jobs:
 
     permissions:
       contents: write
+      pull-requests: write
 
     steps:
       - name: Checkout repository
@@ -25,14 +26,25 @@ jobs:
         run: |
           ./list_s3_objects.sh https://gov-csv-export-public.s3.ap-northeast-1.amazonaws.com "" gov-csv-export-public
 
-      - name: Commit and push if changes exist
+      - name: Create Pull Request if changes exist
         run: |
           if [[ -n $(git status --porcelain) ]]; then
             # Process when changes are detected
+            current_date=$(date '+%Y-%m-%d')
+            branch_name="update-s3-list-${current_date}"
+
             git config --global user.name 'github-actions[bot]'
             git config --global user.email 'github-actions[bot]@users.noreply.github.com'
 
+            git checkout -b $branch_name
             git add .
-            git commit -m "update: S3 object list update $(date '+%Y-%m-%d')"
-            git push origin main
+            git commit -m "update: S3 object list update ${current_date}"
+            git push origin $branch_name
+
+            gh auth login --with-token <<< "${{ secrets.GITHUB_TOKEN }}"
+            gh pr create \
+              --title "S3 object list update ${current_date}" \
+              --body "Automated update by GitHub Actions" \
+              --base main \
+              --head $branch_name
           fi
