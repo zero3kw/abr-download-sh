@@ -3,39 +3,40 @@
 
 ## 全国一括ダウンロード
 
+### 町字（mt_town）
+
+```bash
+curl -s "https://raw.githubusercontent.com/zero3kw/abr-download-sh/refs/heads/main/gov-csv-export-public/mt_town/pref/list.txt" | awk -F "," 'NR > 1 {print $1}' | xargs -P 0 -n 1 curl -s -O
+```
+
 ### 町字位置参照（mt_town_pos）
 
 ```bash
-curl -s "https://raw.githubusercontent.com/zero3kw/abr-download-sh/refs/heads/main/gov-csv-export-public/mt_town_pos/pref/list.txt
-" | awk -F "," 'NR > 1 {print $1}' | xargs -P 0 -n 1 curl -s -O
+curl -s "https://raw.githubusercontent.com/zero3kw/abr-download-sh/refs/heads/main/gov-csv-export-public/mt_town_pos/pref/list.txt" | awk -F "," 'NR > 1 {print $1}' | xargs -P 0 -n 1 curl -s -O
 ```
 
 ### 住居表示-街区（mt_rsdtdsp_blk）
 
 ```bash
-curl -s "https://raw.githubusercontent.com/zero3kw/abr-download-sh/refs/heads/main/gov-csv-export-public/mt_rsdtdsp_blk/pref/list.txt
-" | awk -F "," 'NR > 1 {print $1}' | xargs -P 0 -n 1 curl -s -O
+curl -s "https://raw.githubusercontent.com/zero3kw/abr-download-sh/refs/heads/main/gov-csv-export-public/mt_rsdtdsp_blk/pref/list.txt" | awk -F "," 'NR > 1 {print $1}' | xargs -P 0 -n 1 curl -s -O
 ```
 
 ### 住居表示-街区位置参照（mt_rsdtdsp_blk_pos）
 
 ```bash
-curl -s "https://raw.githubusercontent.com/zero3kw/abr-download-sh/refs/heads/main/gov-csv-export-public/mt_rsdtdsp_blk_pos/pref/list.txt
-" | awk -F "," 'NR > 1 {print $1}' | xargs -P 0 -n 1 curl -s -O
+curl -s "https://raw.githubusercontent.com/zero3kw/abr-download-sh/refs/heads/main/gov-csv-export-public/mt_rsdtdsp_blk_pos/pref/list.txt" | awk -F "," 'NR > 1 {print $1}' | xargs -P 0 -n 1 curl -s -O
 ```
 
 ### 住居表示-住居（mt_rsdtdsp_rsdt）
 
 ```bash
-curl -s "https://raw.githubusercontent.com/zero3kw/abr-download-sh/refs/heads/main/gov-csv-export-public/mt_rsdtdsp_rsdt/pref/list.txt
-" | awk -F "," 'NR > 1 {print $1}' | xargs -P 0 -n 1 curl -s -O
+curl -s "https://raw.githubusercontent.com/zero3kw/abr-download-sh/refs/heads/main/gov-csv-export-public/mt_rsdtdsp_rsdt/pref/list.txt" | awk -F "," 'NR > 1 {print $1}' | xargs -P 0 -n 1 curl -s -O
 ```
 
 ### 住居表示-住居位置参照（mt_rsdtdsp_rsdt_pos）
 
 ```bash
-curl -s "https://raw.githubusercontent.com/zero3kw/abr-download-sh/refs/heads/main/gov-csv-export-public/mt_rsdtdsp_rsdt_pos/pref/list.txt
-" | awk -F "," 'NR > 1 {print $1}' | xargs -P 0 -n 1 curl -s -O
+curl -s "https://raw.githubusercontent.com/zero3kw/abr-download-sh/refs/heads/main/gov-csv-export-public/mt_rsdtdsp_rsdt_pos/pref/list.txt" | awk -F "," 'NR > 1 {print $1}' | xargs -P 0 -n 1 curl -s -O
 ```
 
 
