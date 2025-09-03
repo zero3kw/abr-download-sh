@@ -1,2 +1,2 @@
 Key,LastModified,ETag,Size
-https://gov-csv-export-public.s3.ap-northeast-1.amazonaws.com/mt_town/mt_town_all.csv.zip,2025-09-01T00:22:17.000Z,897b5655aee728ba40897ebf03c7daeb,13574226
+https://gov-csv-export-public.s3.ap-northeast-1.amazonaws.com/mt_town/mt_town_all.csv.zip,2025-09-03T00:51:38.000Z,269b45aa37e28be76afed132d79126a1,13574241
