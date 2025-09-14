@@ -21,7 +21,7 @@ https://gov-csv-export-public.s3.ap-northeast-1.amazonaws.com/mt_town/pref/mt_to
 https://gov-csv-export-public.s3.ap-northeast-1.amazonaws.com/mt_town/pref/mt_town_pref20.csv.zip,2025-05-28T09:24:53.000Z,38350732463a5640bf63d139338f94dd,138372
 https://gov-csv-export-public.s3.ap-northeast-1.amazonaws.com/mt_town/pref/mt_town_pref21.csv.zip,2025-05-28T09:25:04.000Z,c97df89f03e07639a02fb226105d7e4d,256516
 https://gov-csv-export-public.s3.ap-northeast-1.amazonaws.com/mt_town/pref/mt_town_pref22.csv.zip,2025-05-28T09:25:14.000Z,4cc39313a87d9922a62600b2e5ebc186,133313
-https://gov-csv-export-public.s3.ap-northeast-1.amazonaws.com/mt_town/pref/mt_town_pref23.csv.zip,2025-09-12T15:41:00.000Z,bef8417df99d9b26b376caf663ea7be8,1200323
+https://gov-csv-export-public.s3.ap-northeast-1.amazonaws.com/mt_town/pref/mt_town_pref23.csv.zip,2025-09-13T15:41:00.000Z,6e87d4771ea68d182571e893f2980403,1200202
 https://gov-csv-export-public.s3.ap-northeast-1.amazonaws.com/mt_town/pref/mt_town_pref24.csv.zip,2025-05-28T09:25:39.000Z,f39116dabd7b7727b311f646788d1b4d,106007
 https://gov-csv-export-public.s3.ap-northeast-1.amazonaws.com/mt_town/pref/mt_town_pref25.csv.zip,2025-05-28T09:25:48.000Z,f861d1991c6cc5143b29eecf458b54aa,122225
 https://gov-csv-export-public.s3.ap-northeast-1.amazonaws.com/mt_town/pref/mt_town_pref26.csv.zip,2025-05-28T09:25:59.000Z,8445cac1b12c4c3f2b44239d165c1fcd,671691
